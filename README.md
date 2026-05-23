@@ -13,6 +13,7 @@ MODEM73 is a [KISS](https://en.wikipedia.org/wiki/KISS_(amateur_radio_protocol))
 ![Screenshot](https://i.ibb.co/4ZhhvcQs/Peek-2026-01-01-10-41.gif)
 
 
+
 ## Installation
 
 
@@ -134,6 +135,7 @@ while running `rigctld`
 A control port for modem73 will automatically start on port `8073` by default. View `CONTROL_PORT.md` for the full JSON spec
 
 ## Usage
+<img width="1092" height="847" alt="image" src="https://github.com/user-attachments/assets/7180ab80-4386-4ee1-8029-42ca5300ef13" />
 
 ### All In One Audio Cable (AIOC)
 modem73 supports the [AIOC](https://github.com/skuep/AIOC) out of the box. To use the All In One Audio cable, set PTT to COM, specify your COM port, and set PTT line to `BOTH` and Invert to `INVERT RTS`. Make sure you have the correct permissions and `/dev/xxxx` specified. The AIOC on most setups will be /dev/ttyACMx (where x is 0, 1, 2). Note that it may change after a device restart, plugging it back in, etc. 
