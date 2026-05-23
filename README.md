@@ -1,3 +1,4 @@
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://i.ibb.co/LDNR23jg/MODEM73-white.png">
@@ -131,6 +132,31 @@ while running `rigctld`
 ### Control port
 
 A control port for modem73 will automatically start on port `8073` by default. View `CONTROL_PORT.md` for the full JSON spec
+
+## Usage
+
+### All In One Audio Cable (AIOC)
+modem73 supports the [AIOC](https://github.com/skuep/AIOC) out of the box. To use the All In One Audio cable, set PTT to COM, specify your COM port, and set PTT line to `BOTH` and Invert to `INVERT RTS`. Make sure you have the correct permissions and `/dev/xxxx` specified. The AIOC on most setups will be /dev/ttyACMx (where x is 0, 1, 2). Note that it may change after a device restart, plugging it back in, etc. 
+
+### rigctl
+modem73 supports Hamlib and rigctl for any rigctl supported radio for PTT. Set rigctl to your options and run `rigctld -m (your model) -s (serial baud rate) -r /dev/XXXX)`  The `d` at the end of `rigctl` tells rigctl to run in network mode, which is what modem73 will connect to.
+
+### Reticulum
+Want to use modem73 with Reticulum? Check out the modem73interface
+https://github.com/RFnexus/modem73interface
+
+Drop it into `~/.reticulum/interfaces/` and in your Reticulum config, add something like:
+```
+[[MODEM73]]
+type = Modem73Interface
+enabled = yes
+target_host = 127.0.0.1
+target_port = 8001
+control_host = 127.0.0.1
+control_port = 8073
+```
+
+
 
 
 ## Updating
